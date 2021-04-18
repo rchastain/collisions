@@ -22,7 +22,6 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure FormPaint(Sender: TObject);
   private
     { private declarations }
   public
@@ -51,7 +50,7 @@ begin
   for i := 0 to High(Balls) do
     Balls[i].Render(FormBitmap);
   
-  Form1.Invalidate;
+  FormBitmap.Draw(Form1.Canvas, 0, 0, True);
   
   for i := 0 to High(Balls) do
     Balls[i].Move;
@@ -126,11 +125,6 @@ end;
 procedure TForm1.FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
 begin
   Close;
-end;
-
-procedure TForm1.FormPaint(Sender: TObject);
-begin
-  FormBitmap.Draw(Canvas, 0, 0, True);
 end;
 
 end.
