@@ -1,13 +1,12 @@
 object Form1: TForm1
-  Left = 319
+  Left = 345
   Height = 658
-  Top = 0
+  Top = 20
   Width = 953
   Caption = 'Form1'
   OnClose = FormClose
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
-  OnPaint = FormPaint
   LCLVersion = '2.0.10.0'
   object AppPro: TApplicationProperties
     OnIdle = AppProIdle
